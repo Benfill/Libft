@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:35:37 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:58:56 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/19 13:00:11 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/19 13:42:06 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+#include	<stdio.h>
+
+int	ft_strlen(char *str)
 {
-	int				i;
-	unsigned long	j;
+	int	i;
 
-	j = 1;
 	i = 0;
-	while (str1[i] && str2[i])
+	while (str[i])
 	{
-		if (n == j)
-		{
-			if (str1[i] == str2[i])
-			{
-				return (0);
-			}
-			else
-				return (str1[i] - str2[i]);
-		}
 		i++;
-		j++;
 	}
-	return (str1[i] - str2[i]);
+	return (i);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t n)
+{
+	size_t		i;
+	size_t		j;
+
+	i = ft_strlen(dst);
+	j = 0;
+	while (n)
+	{
+		dst[i] = src[j];
+		j++;
+		i++;
+		n--;
+	}
+	dst[i + j] = '\0';
+	return (i + j);
 }

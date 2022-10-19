@@ -6,19 +6,20 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:39:55 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/15 16:07:30 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:12:12 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include	<stdio.h>
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	int		i;
-	char	*ptr;
-	char	*ptr2;
+	unsigned long	i;
+	char			*ptr;
+	char			*ptr2;
 
 	i = 0;
 	ptr = (char *) str;
-	ptr2 = NULL;
+	ptr2 = 0;
 	while (n > i)
 	{
 		if (ptr[i] == c)
@@ -28,8 +29,9 @@ void	*ft_memchr(const void *str, int c, size_t n)
 		}
 		i++;
 	}
-	if (ptr2 == NULL)
+	if (ptr2 == 0)
 	{
 		return (ptr2);
 	}
+	return (ptr2);
 }

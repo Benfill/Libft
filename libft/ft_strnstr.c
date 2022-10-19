@@ -6,15 +6,16 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 17:28:43 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/17 12:26:18 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:00:59 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	int		i;
-	int		j;
-	char	*ptr;
+	int				i;
+	unsigned long	j;
+	const char		*ptr;
 
 	i = 0;
 	j = 0;
@@ -32,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 		if (little[j] != '\0' && n > j)
 		{
 			j = 0;
-			ptr = NULL;
+			ptr = 0;
 		}
 		i++;
 	}

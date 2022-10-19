@@ -6,15 +6,15 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:58:32 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/15 12:54:47 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:16:07 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 
 void	*ft_memset(void *ptr, int x, size_t n)
 {
-	int		i;
-	char	*str;
+	unsigned long	i;
+	char			*str;
 
 	i = 0;
 	str = (char *)ptr;

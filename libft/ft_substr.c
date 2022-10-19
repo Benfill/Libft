@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:35:37 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:58:56 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/17 19:42:14 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/19 21:03:02 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include	<unistd.h>
+#include	<stdlib.h>
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int				i;
-	unsigned long	j;
+	unsigned long	i;
+	char			*str;
 
-	j = 1;
 	i = 0;
-	while (str1[i] && str2[i])
+	str = malloc(len * sizeof(char));
+	while (len > i)
 	{
-		if (n == j)
-		{
-			if (str1[i] == str2[i])
-			{
-				return (0);
-			}
-			else
-				return (str1[i] - str2[i]);
-		}
+		str[i] = s[start];
 		i++;
-		j++;
+		start++;
 	}
-	return (str1[i] - str2[i]);
+	return (str);
 }

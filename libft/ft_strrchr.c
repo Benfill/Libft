@@ -6,7 +6,7 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:10:12 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/15 15:13:20 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:02:15 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *str, int c)
 	char		a;
 	const char	*ptr;
 
-	ptr = NULL;
+	ptr = 0;
 	i = ft_strlen(str);
 	a = c;
 	while (i != 0)
@@ -40,8 +40,9 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		i--;
 	}
-	if (ptr == NULL)
+	if (ptr == 0)
 	{
 		return (ptr);
 	}
+	return (ptr);
 }

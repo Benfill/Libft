@@ -6,7 +6,7 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:54:01 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/15 12:51:34 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:05:36 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -30,6 +30,7 @@ int	ft_putnbr(int nbr)
 	}
 	else
 		ft_putchar(nbr + 48);
+	return (nbr);
 }
 
 int	ft_atoi(const char *str)

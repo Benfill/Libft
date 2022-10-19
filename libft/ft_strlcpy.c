@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:35:37 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:58:56 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/19 13:30:56 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/19 13:39:12 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include	<stdio.h>
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
-	int				i;
-	unsigned long	j;
+	size_t		i;
+	size_t		j;
 
-	j = 1;
 	i = 0;
-	while (str1[i] && str2[i])
+	j = 0;
+	while (n > 1)
 	{
-		if (n == j)
-		{
-			if (str1[i] == str2[i])
-			{
-				return (0);
-			}
-			else
-				return (str1[i] - str2[i]);
-		}
+		n--;
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	return (str1[i] - str2[i]);
+	dst[i] = '\0';
+	return (i + j);
 }

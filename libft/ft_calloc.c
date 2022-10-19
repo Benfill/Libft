@@ -6,15 +6,16 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:31:02 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/17 17:00:35 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:09:27 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	char	*str;
+	unsigned long	i;
+	char			*str;
 
 	i = 0;
 	str = (char *)s;

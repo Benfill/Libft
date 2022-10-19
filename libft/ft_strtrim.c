@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 19:35:37 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:58:56 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/19 21:13:29 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/19 21:29:00 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int				i;
-	unsigned long	j;
+	int			i;
+	int			k;
 
-	j = 1;
 	i = 0;
-	while (str1[i] && str2[i])
+	k = 0;
+	while (s1[i])
 	{
-		if (n == j)
-		{
-			if (str1[i] == str2[i])
-			{
-				return (0);
-			}
-			else
-				return (str1[i] - str2[i]);
-		}
-		i++;
-		j++;
+		k++;
 	}
-	return (str1[i] - str2[i]);
+	set = malloc(k * sizeof(char));
+	while (s1[i])
+	{
+		if ((s1[i] == ' ') || (s1[i] == '\t') || (s1[i] == '\n'))
+		{
+			*s1++;
+		}
+		*set++ = *s1++;
+		i++;
+	}
+	return (set);
+}
+
+int		main()
+{
+	char	str[] = "       the saint devl";
+	char	*s;
+	printf("%s", ft_strtrim(str, s));
 }
