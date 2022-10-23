@@ -6,7 +6,7 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:02:13 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:22:21 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/22 08:56:15 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -50,5 +50,9 @@ char	*ft_strdup(const char *s)
 	ptr = (char *) s;
 	s = malloc(i * sizeof(char));
 	ft_memcpy(s, ptr);
+	if (!s)
+	{
+		return (0);
+	}
 	return (s);
 }

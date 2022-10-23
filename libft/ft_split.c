@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 14:15:52 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 10:45:35 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/21 16:35:05 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/22 10:44:21 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include	<stdlib.h>
+#include	<stdio.h>
 
 char	*ft_allcheck(char *p)
 {
@@ -32,29 +21,29 @@ char	*ft_allcheck(char *p)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	**ft_split(char const *s, char c)
 {
+	char	*str;
 	int		i;
-	int		j;
-	int		h;
-	char	*p;
 
-	i = ft_strlen(s1);
-	j = 0;
-	h = ft_strlen(s2);
-	p = malloc((h + i) * sizeof(char));
-	while (s1[j])
-	{
-		p[j] = s1[j];
-		j++;
-	}
 	i = 0;
-	while (s2[i])
+	while (s[i] != c)
 	{
-		p[j] = s2[i];
 		i++;
-		j++;
 	}
-	ft_allcheck(p);
-	return (p);
+	i += 1;
+	str = malloc(i * sizeof(char));
+	i = 0;
+	while ((s[i] != c) || (s[i]))
+	{
+		if ((s[i] == c) || (s[i] == ',') || (s[i] == '.') || (s[i] == ';'))
+		{
+			break ;
+		}
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	ft_allcheck(str);
+	return (str);
 }

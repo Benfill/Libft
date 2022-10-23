@@ -6,38 +6,79 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:13:29 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 21:29:00 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/22 08:53:28 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	my_strlen(char const *str)
 {
-	int			i;
-	int			k;
+	int		i;
+	int		j;
 
 	i = 0;
-	k = 0;
-	while (s1[i])
+	j = 0;
+	while (str[i])
 	{
-		k++;
-	}
-	set = malloc(k * sizeof(char));
-	while (s1[i])
-	{
-		if ((s1[i] == ' ') || (s1[i] == '\t') || (s1[i] == '\n'))
+		while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n'))
 		{
-			*s1++;
+			i++;
 		}
-		*set++ = *s1++;
 		i++;
+		j++;
 	}
-	return (set);
+	return (j);
 }
 
-int		main()
+char	*white_space(char const *s1)
 {
-	char	str[] = "       the saint devl";
-	char	*s;
-	printf("%s", ft_strtrim(str, s));
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
+
+	i = 0;
+	j = 0;
+	k = my_strlen(s1);
+	str = malloc(k * sizeof(char));
+	while (s1[i])
+	{
+		while ((s1[i] == ' ') || (s1[i] == '\t') || (s1[i] == '\n'))
+		{
+			i++;
+		}
+		str[j] = s1[i];
+		j++;
+		i++;
+	}
+	return (str);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+	char	*str;
+	char	*tmp;
+
+	i = my_strlen(set);
+	j = 0;
+	white_space(s1);
+	tmp = malloc(i * sizeof(char));
+	i = 0;
+	while (s1[j])
+	{
+		while (s1[j] == set[i])
+		{
+			tmp[i] = s1[j];
+			i++;
+			j++;
+		}
+		j++;
+	}
+	if (!tmp)
+	{
+		return (0);
+	}
+	return (tmp);
 }

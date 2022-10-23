@@ -6,7 +6,7 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:31:02 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 20:09:27 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/22 08:55:25 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -36,5 +36,9 @@ void	*ft_calloc(size_t count, size_t size)
 		return (ptr);
 	}
 	ft_bzero(ptr, count * size);
+	if (!ptr)
+	{
+		return (0);
+	}
 	return (ptr);
 }

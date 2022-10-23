@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 14:15:52 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 10:45:35 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/21 17:19:38 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/23 14:19:55 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include	<stdlib.h>
 
-int	ft_strlen(const char *str)
+int	ft_strlen(int *str)
 {
 	int		i;
 
@@ -23,38 +23,24 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_allcheck(char *p)
+char	*ft_itoa(int n)
 {
-	if (!p)
+	int		i;
+	char	*str;
+	int		*tmp;
+
+	tmp = &n;
+	i = ft_strlen(tmp);
+	str = malloc(i * sizeof(char));
+	i = 0;
+	while (tmp[i])
+	{
+		str[i] = tmp[i];
+		i++;
+	}
+	if (!str)
 	{
 		return (0);
 	}
-	return (0);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	int		i;
-	int		j;
-	int		h;
-	char	*p;
-
-	i = ft_strlen(s1);
-	j = 0;
-	h = ft_strlen(s2);
-	p = malloc((h + i) * sizeof(char));
-	while (s1[j])
-	{
-		p[j] = s1[j];
-		j++;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		p[j] = s2[i];
-		i++;
-		j++;
-	}
-	ft_allcheck(p);
-	return (p);
+	return (str);
 }

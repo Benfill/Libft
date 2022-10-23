@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 19:42:14 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 08:52:17 by abenfill         ###   ########.fr       */
+/*   Created: 2022/10/23 13:59:40 by abenfill          #+#    #+#             */
+/*   Updated: 2022/10/23 14:17:52 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include	<unistd.h>
-#include	<stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned long	i;
-	char			*str;
+	unsigned int	i;
 
 	i = 0;
-	str = malloc(len * sizeof(char));
-	while (len > i)
+	if (s)
 	{
-		str[i] = s[start];
-		i++;
-		start++;
+		while (s[i])
+		{
+			(*f)(i, s + i);
+			i++;
+		}
 	}
-	if (!str)
-	{
-		return (0);
-	}
-	return (str);
 }
