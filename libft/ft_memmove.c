@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:31:36 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 12:44:29 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:01:03 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include	<stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *to, const void *from, size_t n)
 {
@@ -23,5 +24,5 @@ void	*ft_memmove(void *to, const void *from, size_t n)
 		*dst++ = *src++;
 		n--;
 	}
-	return (dst);
+	return (to);
 }

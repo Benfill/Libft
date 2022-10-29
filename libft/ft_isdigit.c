@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:37:21 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/06 20:28:46 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:02:10 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include "libft.h"
 
 int	ft_isdigit(int arg)
 {

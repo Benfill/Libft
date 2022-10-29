@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:07:28 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/06 20:32:11 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:00:46 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include "libft.h"
 
 int	ft_isalpha(char alpha)
 {

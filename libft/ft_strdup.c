@@ -6,11 +6,12 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 17:02:13 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 08:56:15 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:01:17 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(const char *str)
 {
@@ -24,35 +25,22 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-void	*ft_memcpy(const void *dest, const void *src)
-{
-	int			i;
-	char		*d;
-	const char	*s;
-
-	i = 0;
-	d = (char *) dest;
-	s = (char *) src;
-	while (s[i])
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (d);
-}
-
 char	*ft_strdup(const char *s)
 {
 	int		i;
-	void	*ptr;
+	char	*ptr;
 
 	i = ft_strlen(s);
-	ptr = (char *) s;
-	s = malloc(i * sizeof(char));
-	ft_memcpy(s, ptr);
+	ptr = (char *) malloc(i * sizeof(char));
+	i = 0;
+	while (s[i])
+	{
+		ptr[i] = s[i];
+		i++;
+	}
 	if (!s)
 	{
 		return (0);
 	}
-	return (s);
+	return (ptr);
 }

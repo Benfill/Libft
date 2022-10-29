@@ -6,11 +6,12 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:31:02 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 08:55:25 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:58:01 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

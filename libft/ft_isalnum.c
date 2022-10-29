@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:00:45 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/06 20:32:46 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:59:23 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
+#include "libft.h"
 
 int	isalnum(int argument)
 {

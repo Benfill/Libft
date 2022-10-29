@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:30:56 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 13:39:12 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:57:24 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include	<stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {

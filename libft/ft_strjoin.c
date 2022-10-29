@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:15:52 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/22 10:45:35 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 16:54:37 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(const char *str)
 {

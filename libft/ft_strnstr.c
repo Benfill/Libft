@@ -6,10 +6,11 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 17:28:43 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/19 21:00:59 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:02:56 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
