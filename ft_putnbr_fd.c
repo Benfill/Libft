@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/29 16:56:40 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include	<unistd.h>
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)

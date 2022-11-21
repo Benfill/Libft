@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/29 16:58:32 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include	<unistd.h>
+
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return ;
 	while (s[i])
 	{
 		ft_putchar_fd(s[i], fd);

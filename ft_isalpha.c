@@ -9,15 +9,11 @@
 /*   Updated: 2022/10/29 17:00:46 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include "libft.h"
 
-int	ft_isalpha(char alpha)
+int	ft_isalpha(int alpha)
 {
 	if ((alpha >= 'a' && alpha <= 'z') || (alpha >= 'A' && alpha <= 'Z'))
-	{
 		return (1);
-	}
-	else
-		return (0);
+	return (0);
 }

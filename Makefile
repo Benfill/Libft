@@ -20,23 +20,21 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c \
 					ft_putstr_fd.c  ft_strjoin.c ft_strnstr.c ft_strrchr.c ft_split.c
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
 
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				ar -rc $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
-re:				fclean $(NAME)
-
-.PHONY:			all clean fclean re bonus
+re:				fclean all

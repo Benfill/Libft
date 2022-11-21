@@ -6,31 +6,23 @@
 /*   By: abenfill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:10:12 by abenfill          #+#    #+#             */
-/*   Updated: 2022/10/29 16:54:49 by abenfill         ###   ########.fr       */
+/*   Updated: 2022/11/19 13:52:40 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include	<stdio.h>
 
-char    *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	int		i;
-	int		j;
-	char	*ptr;
-	char	*tmp;
-	
+	size_t	i;
+
 	i = ft_strlen(str);
-	tmp = (char *) str;
-	ptr = NULL;
 	while (i >= 0)
 	{
-		if (str[i] == c)
-		{
-			j = i;
-			ptr = &tmp[j];
-			break;
-		}
+		if (str[i] == (char)c)
+			return ((char *)str + i);
+		if (i == 0)
+			return (NULL);
 		i--;
 	}
-	return (ptr);
+	return (NULL);
 }

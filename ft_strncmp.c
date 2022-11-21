@@ -9,46 +9,23 @@
 /*   Updated: 2022/10/29 17:01:40 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
-
-int	ft_results(const char *str1, const char *str2, size_t n)
-{
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	j = 0;
-	while ((str2[i]) || (str1[i]))
-	{
-		if (i < n)
-		{
-			if (str1[i] == str2[i])
-				j = j + 0;
-			else if (str1[i] > str2[i])
-				j = j + 1;
-			else if (str1[i] < str2[i])
-				j = j - 1;
-		}
-		i++;
-	}
-	return (j);
-}
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned int	j;
+	unsigned int	i;
 
-	j = ft_results(str1, str2, n);
-	if (j > 0)
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		j = 1;
+		if (str1[i] == '\0' && str2[i] == '\0')
+			return (0);
+		if ((unsigned char)str1[i] - (unsigned char)str2[i] != 0)
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
 	}
-	if ((ft_strlen(str1) == 0) || (ft_strlen(str1) < ft_strlen(str2)))
-		j = -1;
-	else if (j == 0)
-		j = 0;
-	else if (j < 0)
-		j = -1;
-	return (j);
+	return (0);
 }

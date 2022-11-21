@@ -9,23 +9,16 @@
 /*   Updated: 2022/10/29 16:59:23 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_isalnum(int argument)
 {
 	if (argument >= '0' && argument <= '9')
-	{
 		return (1);
-	}
 	else if (argument >= 'a' && argument <= 'z')
-	{
 		return (1);
-	}
 	else if (argument >= 'A' && argument <= 'Z')
-	{
 		return (1);
-	}
 	else
 		return (0);
 }

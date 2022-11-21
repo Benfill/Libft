@@ -9,76 +9,30 @@
 /*   Updated: 2022/10/29 17:02:56 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include "libft.h"
-
-int	ft_index_i(const char *big, const char *little, size_t n)
-{
-	unsigned int	i;
-	int				k;
-
-	i = 0;
-	k = 0;
-	while (big[i] && n > i)
-	{
-		if (big[i] == little[k])
-		{
-			i++;
-			k++;
-		}
-		else
-			i++;
-		if (little[k] == '\0')
-			break ;
-		if (big[i] != little[k])
-		k = 0;
-	}
-	i = i - k;
-	if (k == 0)
-		i = 0;
-	return (i);
-}
-
-int	ft_index_k(const char *big, const char *little, size_t n)
-{
-	unsigned int	i;
-	int				k;
-
-	i = 0;
-	k = 0;
-	while (big[i] && n > i)
-	{
-		if (big[i] == little[k])
-		{
-			i++;
-			k++;
-		}
-		else
-			i++;
-		if (little[k] == '\0')
-			break ;
-		if (big[i] != little[k])
-		k = 0;
-	}
-	return (k);
-}
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	unsigned int	i;
-	int				k;
-	char			*tmp;
-	char			*ptr;
+	size_t	i;
+	size_t	j;
 
-	tmp = (char *) big;
-	ptr = 0;
-	i = ft_index_i(big, little, n);
-	k = ft_index_k(big, little, n);
-	if (little[k] == '\0')
+	i = 0;
+	j = 0;
+	if (big == 0 && n == 0)
+		return (0);
+	if (ft_strlen(little) == 0)
+		return ((char *)big);
+	if (little[i] == 0)
+		return ((char *)big + ft_strlen(big));
+	while (i < n && big[i + j] != '\0')
 	{
-		ptr = &tmp[i];
+		while (big[i + j] == little[j] && little[j])
+			j++;
+		if (little[j] == '\0' && i + j <= n)
+			return ((char *) big + i);
+		j = 0;
+		i++;
 	}
-	else
-		ptr = 0;
-	return (ptr);
+	return (NULL);
 }

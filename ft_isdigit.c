@@ -9,15 +9,12 @@
 /*   Updated: 2022/10/29 17:02:10 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_isdigit(int arg)
 {
 	if (!(arg >= '0' && arg <= '9'))
-	{
 		return (0);
-	}
 	else
 		return (1);
 }

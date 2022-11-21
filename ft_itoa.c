@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/29 16:55:16 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include	<stdlib.h>
+
 #include "libft.h"
 
 int	ft_nbrlen(int n)
@@ -37,6 +37,8 @@ char	*ft_itoa_pos(int n, int len, char *str)
 	nbr = n;
 	len = ft_nbrlen(n);
 	str = (char *) malloc(len * sizeof(char) + 1);
+	if (!str)
+		return (NULL);
 	while (i < len)
 	{
 		rem = n % 10;
@@ -60,6 +62,8 @@ char	*ft_itoa_nega_min(int n, int len, char *str)
 	len = ft_nbrlen(n) + 2;
 	n *= -1;
 	str = (char *) malloc(len * sizeof(char));
+	if (!str)
+		return (0);
 	while (min[k])
 	{
 		str[i] = min[k];
@@ -82,6 +86,8 @@ char	*ft_itoa_nega(int n, int len, char *str)
 	nbr = n;
 	n *= -1;
 	str = (char *) malloc(len * sizeof(char));
+	if (!str)
+		return (0);
 	while (i < len)
 	{
 		rem = n % 10;

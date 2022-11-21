@@ -9,9 +9,8 @@
 /*   Updated: 2022/10/29 17:01:17 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
-#include <unistd.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -20,6 +19,8 @@ char	*ft_strdup(const char *s)
 
 	i = ft_strlen(s);
 	ptr = (char *) malloc(i * sizeof(char) + 1);
+	if (!ptr)
+		return (0);
 	i = 0;
 	while (s[i])
 	{
@@ -27,9 +28,5 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	ptr[i] = '\0';
-	if (!s)
-	{
-		return (0);
-	}
 	return (ptr);
 }

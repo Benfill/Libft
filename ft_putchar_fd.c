@@ -9,14 +9,10 @@
 /*   Updated: 2022/10/29 16:54:22 by abenfill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include	<unistd.h>
-#include	<stdlib.h>
+
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
-	char	*p;
-
-	p = &c;
-	write(fd, p, sizeof(c));
+	write(fd, &c, sizeof(c));
 }
