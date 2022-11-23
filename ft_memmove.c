@@ -36,3 +36,9 @@ void	*ft_memmove(void *to, const void *from, size_t n)
 			*dst++ = *src++;
 	return (to);
 }
+
+int		main()
+{
+	int	tab[10] = {20, 50, 60, 40}, tab2[10] = {50, 10, 44, 30};
+	printf("%d", *(int *)ft_memmove(tab, tab2, 3));
+}

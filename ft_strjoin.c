@@ -34,3 +34,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	p[j] = '\0';
 	return (p);
 }
+
+int		main()
+{
+	char	str[] = "Big", str2[] = "D";
+	printf("%s", ft_strjoin(str, str2));
+}

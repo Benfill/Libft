@@ -112,9 +112,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 	{
 		if (n > -2147483647)
-		{
 			str = ft_itoa_nega(n, len, str);
-		}
 		else
 			str = ft_itoa_nega_min(n, len, str);
 	}
@@ -123,6 +121,8 @@ char	*ft_itoa(int n)
 	else if (n == 0)
 	{
 		str = (char *) malloc(2);
+		if (!str)
+			return (NULL);
 		str[0] = '0';
 		str[1] = '\0';
 	}
